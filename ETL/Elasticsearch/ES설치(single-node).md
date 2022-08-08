@@ -36,6 +36,9 @@ tar -xzf elasticsearch-{버전}-linux-x86_64.tar.gz
 - Elasticsearch.yml
 
     ```
+    vi config/elasticsearch.yml
+    
+    
     cluster.name: kafka-test
 
     node.name: node-1
