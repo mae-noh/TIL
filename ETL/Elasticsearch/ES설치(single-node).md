@@ -17,6 +17,45 @@ tar -xzf elasticsearch-{버전}-linux-x86_64.tar.gz
 ```
 <br>
 
+## 환경 설정
+
+- JAVA_HOME 설정
+    ```
+    vi bin/elasticsearch-env
+    
+    // 라인 번호 확인
+    :set number
+    
+    // 39 ~ 41번째 라인 변경
+    if [ ! -z "$ES_HOME" ]; then
+      JAVA="$ES_HOME/jdk/bin/java"
+      JAVA_TYPE="ES_HOME"
+    
+    ```
+
+- Elasticsearch.yml
+
+    ```
+    cluster.name: kafka-test
+
+    node.name: node-1
+
+    path.data: /data/svc/stack/data/elasticsearch/node1-log-data
+
+    path.logs: /data/svc/stack/data/elasticsearch/node1-log-logs
+
+    bootstrap.memory_lock: true
+
+    network.host: 0.0.0.0
+
+    http.port: 9201
+
+    discovery.seed_hosts: ["127.0.0.1"]
+
+    cluster.initial_master_nodes: ["node-1"]
+    ```
+
+
 ## ES 실행
 ```
 bin/elasticsearch
@@ -59,42 +98,3 @@ Elasticsearch 5.0 이후부터는 root에서 실행할 수 없도록 변경됨.<
     // 다른 계정으로 로그인
     su <계정명>
     ```
-
-## 환경 설정
-
-- JAVA_HOME 설정
-    ```
-    vi bin/elasticsearch-env
-    
-    // 라인 번호 확인
-    :set number
-    
-    // 39 ~ 41번째 라인 변경
-    if [ ! -z "$ES_HOME" ]; then
-      JAVA="$ES_HOME/jdk/bin/java"
-      JAVA_TYPE="ES_HOME"
-    
-    ```
-
-- Elasticsearch.yml
-
-    ```
-    cluster.name: kafka-test
-
-    node.name: node-1
-
-    path.data: /data/svc/stack/data/elasticsearch/node1-log-data
-
-    path.logs: /data/svc/stack/data/elasticsearch/node1-log-logs
-
-    bootstrap.memory_lock: true
-
-    network.host: 0.0.0.0
-
-    http.port: 9201
-
-    discovery.seed_hosts: ["127.0.0.1"]
-
-    cluster.initial_master_nodes: ["node-1"]
-    ```
-
