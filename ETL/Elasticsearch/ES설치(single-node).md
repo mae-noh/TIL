@@ -26,20 +26,6 @@ Elasticsearch 실행 시, 추가 옵션 사용 가능<br>
 - `bin/elasticsearch -p <파일명>` <br> ES 프로세스 ID를 지정한 파일에 저장 <br> 실행 종료시, 파일은 자동으로 삭제됨<br>
 
 - ES 실행시 에러 해결
-  - `Permission denied`<br>
-Elasticsearch 5.0 이후부터는 root에서 실행할 수 없도록 변경됨.<br>
-계정 생성 후, 권한을 부여해야한다.
-    ```
-    // 디렉토리 권한 파악
-    ls -l
-
-    // 디렉토리 권한 <계정명>으로 변경하기, root계정으로 실행
-    sudo chown -R <계정명>:<계정명> 디렉토리명
-    
-    // 다른 계정으로 로그인
-    su <계정명>
-    ```
-
   - `bootstrap check failure [1] of [1]: memory locking requested for elasticsearch process but memory is not locked`<br>
 운영모드의 경우 Elasticsearch는 boostrap check 이라는 것을 통해 아래의 설정이 되어 있지 않으면 실행되지 않는다.<br>
 Elasticsearch는 운영체제의 `Java VM 파일 오픈 개수`, `메모리 락`을 모두 제일 크게 활성화 해줘야 한다.<br>
@@ -59,6 +45,19 @@ Elasticsearch는 운영체제의 `Java VM 파일 오픈 개수`, `메모리 락`
     sudo vi /etc/sysctl.conf
 
     vm.max_map_count=262144
+    ```
+  - `Permission denied`<br>
+Elasticsearch 5.0 이후부터는 root에서 실행할 수 없도록 변경됨.<br>
+계정 생성 후, 권한을 부여해야한다.
+    ```
+    // 디렉토리 권한 파악
+    ls -l
+
+    // 디렉토리 권한 <계정명>으로 변경하기, root계정으로 실행
+    sudo chown -R <계정명>:<계정명> 디렉토리명
+    
+    // 다른 계정으로 로그인
+    su <계정명>
     ```
 
 ## 환경 설정
