@@ -67,6 +67,13 @@ Elasticsearch는 운영체제의 `Java VM 파일 오픈 개수`, `메모리 락`
     ```
     vi bin/elasticsearch-env
     
+    // 라인 번호 확인
+    :set number
+    
+    // 39 ~ 41번째 라인 변경
+    if [ ! -z "$ES_HOME" ]; then
+      JAVA="$ES_HOME/jdk/bin/java"
+      JAVA_TYPE="ES_HOME"
     
     ```
 
@@ -92,4 +99,3 @@ Elasticsearch는 운영체제의 `Java VM 파일 오픈 개수`, `메모리 락`
     cluster.initial_master_nodes: ["node-1"]
     ```
 
-- 
