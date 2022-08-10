@@ -18,5 +18,6 @@ hosts = {
 }
 ```
 - host:port 모니터링할 ES 정보
-  - host http://<IP>
-- name cerebro에서 해당 host에 설정되는 이름
+  - host에 `http://` 추가
+- name
+  - cerebro에서 해당 host에 설정되는 이름
