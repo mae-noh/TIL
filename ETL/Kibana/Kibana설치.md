@@ -11,3 +11,11 @@ tar -xvf kibana-{버전}.tar
 ```
 
 ## Kibana 환경설정
+- ./config/kibana.yml
+```
+server.port: 5601
+
+server.host: "0.0.0.0"
+
+elasticsearch.hosts: ["http://192.168.0.104:9200}"]
+```
