@@ -1,3 +1,3 @@
 # gradle
 
-## Bootjar 와 jar의 차이?
+## bootjar 와 jar의 차이?
