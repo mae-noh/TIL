@@ -17,5 +17,5 @@ server.port: 5601
 
 server.host: "0.0.0.0"
 
-elasticsearch.hosts: ["http://192.168.0.104:9200}"]
+elasticsearch.hosts: ["<호스트>:9200"]
 ```
