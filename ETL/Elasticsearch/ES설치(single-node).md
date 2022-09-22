@@ -19,20 +19,6 @@ tar -xzf elasticsearch-{버전}-linux-x86_64.tar.gz
 
 ## 환경 설정
 
-- JAVA_HOME 설정
-    ```
-    vi bin/elasticsearch-env
-    
-    // 라인 번호 확인
-    :set number
-    
-    // 39 ~ 41번째 라인 변경
-    if [ ! -z "$ES_HOME" ]; then
-      JAVA="$ES_HOME/jdk/bin/java"
-      JAVA_TYPE="ES_HOME"
-    
-    ```
-
 - Elasticsearch.yml
 
     ```
@@ -66,8 +52,9 @@ bin/elasticsearch
 Elasticsearch 실행 시, 추가 옵션 사용 가능<br>
 - `bin/elasticsearch -d` <br> 백그라운드 데몬 실행 옵션<br>
 - `bin/elasticsearch -p <파일명>` <br> ES 프로세스 ID를 지정한 파일에 저장 <br> 실행 종료시, 파일은 자동으로 삭제됨<br>
+<br>
 
-- ES 실행시 에러 해결
+ES 실행시 에러 해결<br>
   - `bootstrap check failure [1] of [1]: memory locking requested for elasticsearch process but memory is not locked`<br>
 운영모드의 경우 Elasticsearch는 boostrap check 이라는 것을 통해 아래의 설정이 되어 있지 않으면 실행되지 않는다.<br>
 Elasticsearch는 운영체제의 `Java VM 파일 오픈 개수`, `메모리 락`을 모두 제일 크게 활성화 해줘야 한다.<br>
@@ -88,7 +75,7 @@ Elasticsearch는 운영체제의 `Java VM 파일 오픈 개수`, `메모리 락`
 
     vm.max_map_count=262144
     ```
-  - `Permission denied`<br>
+  - `Permission denied`, `JAVA_HOME 경로 에러`, `jdk 에러`<br>
 Elasticsearch 5.0 이후부터는 root에서 실행할 수 없도록 변경됨.<br>
 계정 생성 후, 권한을 부여해야한다.
     ```
