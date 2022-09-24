@@ -28,10 +28,12 @@
 - slack에서 Incomming WebHooks 다운
 - channel 선택
 - Example을 복사하여 터미널에 입력하여 실행
-- slack의 선택한 channel에 테스트 요청한 메시지 확인
+- 채널에 테스트한 메시지 확인
 
 ## Alerts
 <b>Rules and Connectors</b>
+- connector 확인
+- watcher 등록
 
 ## SSL 설정
 ./bin/elasticsearch-certutil ca
