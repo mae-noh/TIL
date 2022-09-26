@@ -18,11 +18,11 @@ bin/elasticsearch-setup-passwords interactive
 ```
 - kibana 환경설정에 ES 보안 설정
 ```
-elasticsearch.username:"kibana_system"
+elasticsearch.username:"kibana_system" // kibana default 계정 
 ```
 ```
 bin/kibana-keystore create
-bin/kibana-keystore add elasticsearch.password
+bin/kibana-keystore add elasticsearch.password // kibana 비밀번호 설정
 ```
 
 - kibana 실행
@@ -31,12 +31,20 @@ bin/kibana
 ```
 
 ### Connector
-alert이 발생했을때 alert을 어디 시스템으로 보낼 것인가 지정하는 것
+alert이 발생했을때 alert을 어디 시스템(슬랙, 인덱스, 로깅 등)으로 보낼 것인지 지정<br>
 
+### Watcher
+threshold alert, advanced watch 생성 가능<br><br>
+<b>advanced watch</b>
+- watcher 생성<br>
+  ![image](https://user-images.githubusercontent.com/65100355/192204746-4412fb5a-0421-420a-aaf0-1c44ae12b218.png
 
+  - trigger > schedule > interval 주기 
+  - input > search > request > body > query 쿼리 설정
+  - input > search > request > indices 인덱스 패턴 설정 
+  - action 조건이 일치하면 action 정보에 따라 alert 실행 
 
-
-
+- watcher 생성 후 확인 
 ```
 GET _watcher/watch/{id}
 ```
