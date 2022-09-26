@@ -66,7 +66,9 @@
   - `trigger > schedule > interval` 주기 설정
   - `input > search > request > body > query` 쿼리 설정
   - `input > search > request > indices` 인덱스 패턴 설정 
-  - `action` 조건이 일치하면 action 정보에 따라 alert 실행 
+  - `action` 조건이 일치하면 action 정보에 따라 alert 실행
+    - `actios > notify-slack > slack > messsage > text` {{ctx.payload.hits.hits}}{{_source.class}
+ 
 
 - watcher 생성 후 확인 
   ```
