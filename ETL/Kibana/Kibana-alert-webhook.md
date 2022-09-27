@@ -65,6 +65,27 @@
 
   - `trigger > schedule > interval` 주기 설정
   - `input > search > request > body > query` 쿼리 설정
+    ```
+    "query": {
+      "bool":{
+        "must":[
+          {
+            "match": {
+              "logLevel": "ERROR"
+            }
+          },
+          {
+             "range": {
+               "logAccessTime":{
+                 "gt": "now-30m",
+                 "lt": "now"
+               }
+             }
+          }        
+        ]
+      }      
+    }
+    ```
   - `input > search > request > indices` 인덱스 패턴 설정 
   - `action` 조건이 일치하면 action 정보에 따라 alert 실행
   
@@ -88,7 +109,12 @@
           }
         }
       }
- 
+      
+  - `to` #admin 채널명
+  - `text` {{ctx.payload.hits.hits.0._source.logMessage}} 검색 결과값 
+  - `color` 슬랙 메시지 색상값
+
+
 - watcher 생성 후 확인 
   ```
   GET _watcher/watch/{id}
