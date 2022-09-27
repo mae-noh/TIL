@@ -67,9 +67,28 @@
   - `input > search > request > body > query` 쿼리 설정
   - `input > search > request > indices` 인덱스 패턴 설정 
   - `action` 조건이 일치하면 action 정보에 따라 alert 실행
-    - `actios > notify-slack > slack > messsage > text` {{ctx.payload.hits.hits}}{{_source.class}
+  
+    ```
+    "actions" : {
+      "notify-slack" : {
+        "throttle_period" : "5m",
+        "slack" : {
+          "account" : "team1",
+          "message" : {
+            "from" : "watcher",
+            "to" : [ "#admins", "@chief-admin" ],
+            "text" : "System X Monitoring",
+            "attachments" : [
+              {
+                "title" : "Errors Found",
+                "text" : "Encountered  {{ctx.payload.hits.total}} errors in the last 5 minutes (facepalm)",
+                "color" : "danger"
+              }
+            ]
+          }
+        }
+      }
  
-
 - watcher 생성 후 확인 
   ```
   GET _watcher/watch/{id}
