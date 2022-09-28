@@ -87,6 +87,7 @@
     }
     ```
   - `input > search > request > indices` 인덱스 패턴 설정 
+  - `condition > compare > ctx.payload.hits.toal > gte` 전송 최소개수 조건 
   - `action` 조건이 일치하면 action 정보에 따라 alert 실행
   
     ```
@@ -113,6 +114,7 @@
   - `to` #admin 채널명
   - `text` {{ctx.payload.hits.hits.0._source.logMessage}} 검색 결과값 
   - `color` 슬랙 메시지 색상값
+ 
 
 
 - watcher 생성 후 확인 
