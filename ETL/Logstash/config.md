@@ -1,3 +1,6 @@
+# logstash config 설정
+```
+
 input{
   beats {
     port => 5044 #logstash 5044 포트로 데이터를 받음 
@@ -78,3 +81,5 @@ output {
   }
  
 }
+
+```
