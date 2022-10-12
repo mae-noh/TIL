@@ -26,3 +26,13 @@
   ```
 
 - 자신의 계정과 프로젝트를 등록
+
+- API 사용을 위한 계정 및 키 생성
+  - IAM & Admin 서비스 계정 생성
+  - Keys Json 파일 추가
+
+- 설정파일 path에 json key 경로 추가
+```
+export COOCLE_APPLICATION_CREDENTIALS="/Users/maenoh/Documents/key/ocr-test-365301-45ccca0a07f7.json"
+```
+
