@@ -1,7 +1,7 @@
 # Image to Base64
 
 ### request
-`POST`, JSON 형식으로 전송해야함
+`POST`, `JSON` 형식으로 전송해야함
 
 ### Decode
 ```
