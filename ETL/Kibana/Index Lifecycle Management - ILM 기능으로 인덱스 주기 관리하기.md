@@ -17,6 +17,7 @@
 - Index Lifecycle Polices 생성<br>
   - `Name`: "tomcat-monitoring-ilm" // ILM명
   - Hot phase,  Rollover 설정 <img width="2720" alt="스크린샷 2022-12-01 오후 2 38 48" src="https://user-images.githubusercontent.com/65100355/204974418-cb42c4e2-0c61-49e8-b6bf-7d93a4d2b5af.png">
+    - Maximum age :  
     - Maximum documnets : 문서수가 N개 이상일 경우 Rollover Start
   - Warm phase
     - Shrink : shards 개수 조정
