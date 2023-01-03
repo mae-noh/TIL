@@ -38,6 +38,22 @@
   }
   ```
   
+- 인덱스 alias 추가
+  ```
+  POST /_aliases?pretty
+  {
+    "actions": [
+      {
+        "add": {
+          "index": "tomcat-monitoring-2023-01",
+          "alias": "monitoring",
+          "is_write_index": true
+        }
+      }
+    ]
+  }
+  ```
+ 
 - ES 확인 명령어
   ```
   GET _cat/nodes // WARM, HOT, COLD 확인 가능
