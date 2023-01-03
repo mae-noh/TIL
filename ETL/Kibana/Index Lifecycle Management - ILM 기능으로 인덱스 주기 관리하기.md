@@ -55,4 +55,7 @@
   }
   ```
   
-- 
+- ilm 조회
+  ```
+    GET _ilm/policy/monitoring-ilm
+  ```
