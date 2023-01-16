@@ -57,6 +57,13 @@
 <br>
 
 ## Index에 alias 지정
+### 인덱스명
+```
+💡index name does not match pattern '^.*-\d+$'
+```
+- 인덱스명의 경우 정규식 패턴 '^.*-\d+$'과 일치해야함
+  `index-01`
+
 ### 새 인덱스 alias 지정하여 생성시
   ```
   PUT tomcat-monitoring-2022-12
@@ -100,6 +107,7 @@
   ```
   GET _cat/nodes // WARM, HOT, COLD 확인 가능
   GET _cat/shards/*tomcat-monitoring* // Primary, Shard 확인 가능
-  GET tomcat-monitoring/_ilm/explain //
+  GET tomcat-monitoring/_ilm/explain
   GET _ilm/policy/monitoring-ilm
-  ```  
+  ```
+
