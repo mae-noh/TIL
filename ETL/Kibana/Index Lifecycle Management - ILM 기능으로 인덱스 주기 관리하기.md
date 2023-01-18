@@ -1,6 +1,25 @@
 # Index Lifecycle Management - ILM 기능으로 인덱스 주기 관리하기.
 
-## Index Lifecycle Policies 생성.
+```
+기존 인덱스에 적용하는 경우를 살펴보겠습니다.
+순서는 다음과 같습니다.
+
+1. Index Lifecycle Policies 생성
+
+2. Index Template 생성 및 수정
+  - Setting에 [ILM명], [rollover_alias] 추가
+
+3. 기존 인덱스 reindex
+  - 인덱스명 패턴 주의 (정규식패턴 '^.*-\d+$'과 일치하도록)
+  - 인덱스 템플릿이 적용되었는지 확인
+
+4. 인덱스 alias, 옵션값 is_write_index: true 추가
+  - 2번에 [rollover_alias] 설정한값과 동일하게 [alias] 추가
+
+5. 데이터 색인 및 추가시 인덱스명이 아닌 alias명으로 실행
+```
+
+## 1. Index Lifecycle Policies 생성.
 ![image](https://user-images.githubusercontent.com/65100355/212607021-7a7dc12c-87b7-464e-9915-9cdea29b6a25.png)
   ### ILM명 정의
   ```
@@ -36,7 +55,7 @@
 <br>
 <br>
 
-## Index Templates 생성
+## 2. Index Templates 생성
 ### Index Management > Index Template 
   - Logistics<br>
     ```
@@ -56,13 +75,26 @@
 <br>
 <br>
 
-## Index에 alias 지정
+## 3. Index에 alias 지정
 ### 인덱스명
 ```
 💡index name does not match pattern '^.*-\d+$'
 ```
 - 인덱스명의 경우 정규식 패턴 '^.*-\d+$'과 일치해야함
   `index-01`
+  
+### reindex
+   ```
+   POST _reindex?wait_for_completion=false
+   {
+     "source": {
+       "index": "기존인덱스명"
+     },
+     "dest": {
+       "index": "새인덱스명"
+     }
+   }
+   ```
 
 ### 새 인덱스 alias 지정하여 생성시
   ```
