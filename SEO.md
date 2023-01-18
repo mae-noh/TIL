@@ -92,13 +92,13 @@ Allow는 Disallow보다 우선권을 갖음
 ```
 
 - 크롤링이 제한된 상위 서브폴더 이하의 디렉토리 중, 특정 세부 디렉토리를 따로 크롤링 허용하고 싶은 경우 사용
- - 대상: 네이버 크롤러 (Yeti)
- - 제한 디렉토리: /not-for-naver/ 이하
- - 허용 디렉토리: /not-for-naver/only-allow-here/ 이하
-  ```
-   User-agent: Yeti
-   Disallow: /not-for-naver/
-   Allow: /not-for-naver/only-allow-here/
-   ```
+  - 대상: 네이버 크롤러 (Yeti)
+  - 제한 디렉토리: /not-for-naver/ 이하
+  - 허용 디렉토리: /not-for-naver/only-allow-here/ 이하
+    ```
+    User-agent: Yeti
+    Disallow: /not-for-naver/
+    Allow: /not-for-naver/only-allow-here/
+    ```
  
  
