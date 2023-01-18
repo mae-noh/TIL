@@ -1,4 +1,5 @@
 # Index Lifecycle Management - ILM 기능으로 인덱스 주기 관리하기.
+💡 <b>ILM을 이용하면 인덱스를 주기적으로 rollover 및 delete 할 수 있습니다.</b>
 
 ```
 기존 인덱스에 적용하는 경우를 살펴보겠습니다.
@@ -18,7 +19,6 @@
 
 5. 데이터 색인 및 추가시 인덱스명이 아닌 alias명으로 실행
 ```
-
 <br>
 <br>
 <br>
@@ -147,3 +147,14 @@
   GET _ilm/policy/monitoring-ilm
   ```
 
+<br>
+<br>
+<br>
+
+## ILM 인덱스 동작
+- alias 기준으로 인덱스 생성(iis-monitoring, tomcat-monitoring)
+- hot 상태의 인덱스가 1일 기준으로 생성되고, 1일이 넘어가면 해당 인덱스가 warm 상태로 변경됨. 15일이 지나면 인덱스 삭제
+  - hot : 1일
+  - warm : 15일
+  - delete : 15일 이후 인덱스 삭제
+- 기존에는 월별로 인덱스가 생성되었으나 ILM 적용후 랜덤 숫자값으로 생성
