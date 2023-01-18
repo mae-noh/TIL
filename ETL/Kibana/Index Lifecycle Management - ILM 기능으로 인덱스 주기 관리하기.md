@@ -19,6 +19,10 @@
 5. 데이터 색인 및 추가시 인덱스명이 아닌 alias명으로 실행
 ```
 
+<br>
+<br>
+<br>
+
 ## 1. Index Lifecycle Policies 생성.
 ![image](https://user-images.githubusercontent.com/65100355/212607021-7a7dc12c-87b7-464e-9915-9cdea29b6a25.png)
   ### ILM명 정의
