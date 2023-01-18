@@ -89,6 +89,7 @@
 #### Allow
 ```
 Allow는 Disallow보다 우선권을 갖음
+* 제한 디렉토리보다 상위 디렉토리를 허용하면 지정된 제한 디렉토리는 허용디렉토리와 상충되어 무효 처리됨
 ```
 
 - 크롤링이 제한된 상위 서브폴더 이하의 디렉토리 중, 특정 세부 디렉토리를 따로 크롤링 허용하고 싶은 경우 사용
@@ -101,4 +102,22 @@ Allow는 Disallow보다 우선권을 갖음
     Allow: /not-for-naver/only-allow-here/
     ```
  
- 
+<br>
+
+### Sitemap
+```
+사이트맵 위치 명시, 복수의 사이트맵 위치 명시 가능
+절대경로(전체 URL) 포함해야함
+```
+
+```
+User-agent: *
+Disallow: /do-not-crawl-here/
+Sitemap: https://www.example.com/sitemap.xml
+```
+
+## Robot.txt 파일 업로드
+- FTP를 이용하여 웹사이트 루트 디렉토리에 업로드
+
+### 참고
+- https://seo.tbwakorea.com/blog/robots-txt-complete-guide/
