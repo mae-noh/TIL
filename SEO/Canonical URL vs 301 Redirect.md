@@ -15,6 +15,18 @@
   Content-Length: ...
   ```
 
-## 
+## 301 Redirect
+- 하나의 페이지(A)를 다른 페이지(B)로 영구이동
+- 유저가 A페이지 URL을 입력시, 301리다이렉트 설정시 B로 자동으로 연결됨
+
+## Canonical URL 설정 선택
+- 중복 콘텐츠 패널티 방지 가능
+- 파라미터 사용
+- 
+
+## 301 Redirect 설정 선택 
+- 
+- 
+  
 ## 참고
 https://www.ascentkorea.com/canonical-url-vs-301-redirect/
