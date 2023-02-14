@@ -9,5 +9,16 @@
 
 ## 사이트맵 만들기
 
-###
+### 1. 웹사이트로 사이트맵 만들기
+XML-Sitemaps.com
 
+- url입력 > More options
+
+- Include "Page Last modification"
+  페이지의 마지막 변경시점에 대한 설정 항목을 추가할것인가?
+  이 정보를 포함하면 변경되지 않은 페이지에 대한 재크롤링 방지 가능
+ 
+- Automatically calculate "Page Priority"
+  
+  
+- Pages "Change Frequency" attributes
