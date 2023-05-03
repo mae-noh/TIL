@@ -3,8 +3,74 @@
 - 데이터 시각화 및 비즈니스 인텔리전스(BI) 플랫폼
 - 데이터 분석에 전문지식이 없어도 분석 작업을 할 수 있음
 - Airflow를 만든 Airbnb에서 시작한 프로젝트
-- python
+- python으로 개발
 ```
+
+## Installing Superset Locally Using Docker Compose
+
+### Docker Engine 및 Docker Compose 설치
+https://docs.docker.com/desktop/install/mac-install/
+<br><br>
+
+### Superset's GitHub repository 복제
+```
+git clone https://github.com/apache/superset.git
+```
+
+### Docker Compose를 통해 Superset 실행
+```
+cd superset
+```
+
+```
+docker-compose -f docker-compose-non-dev.yml pull
+docker-compose -f docker-compose-non-dev.yml up
+```
+
+### Superset에 로그인
+http://localhost:8080
+```
+username: admin
+password: admin
+```
+
+<br>
+
+## 환경 설정  
+- 경로 `docker/pythonpath_dev/superset_config.py`<br>
+  [ superset git 복제한 폴더 아래에 존재 ]
+  - superset version 2.0.0으로 변경<br>
+    ```
+    x-superset-image: &superset-image apache/superset:${TAG:-latest-dev}
+    x-superset-image: &superset-image apache/superset:2.0.0 # 변경
+    ```
+  
+  - x-superset-volumes 이미지 확장 기능
+    ```
+    x-superset-volumes: &superset-volumes
+    # /app/pythonpath_docker will be appended to the PYTHONPATH in the final container
+      - ./docker:/app/docker
+      - superset_home:/app/superset_home
+    
+    x-superset-volumes: &superset-volumes
+    # /app/pythonpath_docker will be appended to the PYTHONPATH in the final container
+      - ./docker:/app/docker
+      - superset_home:/app/superset_home
+      - 경로 추가
+    ```
+
+- 경로 `docker/.env-non-dev` 수정<br>
+  superset 설치된 후, 자동으로 생성되는 샘플데이터와 샘플 대시보드를 사용하지 않음.<br>
+  superset 인스턴스가 가벼워지며, 필요한 데이터와 대시보드만 추가하여 사용 가능.<br>
+  ```
+  SUPERSET_LOAD_EXAMPLES=no
+  ```
+    
+- 대시보드 기능 활성화<b>
+  경로 `docker/pythonpath_dev/superset_config.py`
+  - 
+
+## DB 연결하기
 
 ## Installing Superset from Scratch
 
