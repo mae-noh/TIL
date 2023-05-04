@@ -66,15 +66,53 @@ password: admin
   SUPERSET_LOAD_EXAMPLES=no
   ```
     
-- 대시보드 기능 활성화<b>
+- 대시보드 기능 활성화<br>
   경로 `docker/pythonpath_dev/superset_config.py`
-  - 
+  
+  ```
+  APP_NAME = "etoos_Superset"
+  
+  FEATURE_FLAGS = {
+    "ALERT_REPORTS": True,
+    "DASHBOARD_RBAC": True,
+    "DISABLE_SEGACY_DATASOURCE_EDITOR": False,
+    "DASHBOARD_NATIVE_FILTERS": True,
+    "DASHBOARD_CROSS_FILTERS": True,
+    "DASHBOARD_NATIVE_FILTERS_SET": True,
+    "ENABLE_TEMPLATE_PROCESSING": True,
+    "ESCAPE_MARKDOWN_HTML": False
+  }
+  ```
+  - "ALERT_REPORTS": True<br>
+    대시보드에서 경고 및 보고서를 활성화합니다. 이 기능을 사용하면 데이터에 대한 경고를 생성하고 이메일, Slack 등으로 경고를 전송할 수 있습니다.
+  - "DASHBOARD_RBAC": True<br>
+    대시보드 역할 기반 접근 제어 (RBAC)을 활성화합니다. 이 설정을 사용하면 대시보드에 대한 액세스 권한을 부여할 수 있는 역할을 생성할 수 있습니다.
+  - "ENABLE_TEMPLATE_PROCESSING": True<br>
+    대시보드에서 Jinja 템플릿을 사용하여 데이터를 처리하고 처리된 결과를 표시하는 기능을 활성화합니다.
+  - "ENABLE_TEMPLATE_REMOVE_FILTERS": True<br>
+    대시보드에서 Jinja 템플릿을 사용할 때, 템플릿에서 필터를 제거하는 기능을 활성화합니다. 이 기능을 사용하면 대시보드에서 필터를 무시하고 템플릿에 하드 코딩된 데이터를 표시할 수 있습니다.
+  - "ESCAPE_MARKDOWN_HTML": False<br>
+    대시보드에서 Markdown 텍스트를 사용할 때, HTML 특수 문자를 이스케이핑하지 않도록 설정합니다. 이 설정을 사용하면 HTML 코드를 포함한 Markdown 텍스트를 대시보드에서 표시할 수 있습니다.
+  - "DASHBOARD_NATIVE_FILTERS": True<br>
+    대시보드에서 네이티브 필터를 사용하는 기능을 활성화합니다. 이 설정을 사용하면 대시보드에서 데이터를 필터링할 수 있는 인터페이스를 제공합니다.
+  - "DASHBOARD_CROSS_FILTERS": True<br>
+    대시보드에서 크로스 필터 기능을 활성화합니다. 이 설정을 사용하면 하나의 대시보드에서 선택된 값에 대한 필터링이 다른 대시보드에도 적용됩니다.
+  - "DASHBOARD_NATIVE_FILTERS_SET": True<br>
+    대시보드에서 네이티브 필터 설정을 활성화합니다. 이 설정을 사용하면 필터 설정을 저장하여 나중에 다시 사용할 수 있습니다.
 
 ## DB 연결하기
+
+### DB 종속성 추가
+https://superset.apache.org/docs/databases/docker-add-drivers/
+```
+touch /docker/requirements-local.txt
+vi /docker/requirements-local.txt
+```
 
 ## Installing Superset from Scratch
 
 ### OS Dependencies
+  
 - 운영체제 버전 확인
   ```
   lsb_release -a
@@ -85,6 +123,7 @@ password: admin
   ```
 
 ### Python Virtual Environment
+  
 - 파이썬 가상환경 설치
   ```
   python3 -m venv venv-superset
@@ -92,6 +131,7 @@ password: admin
   ```
 
 ### Installing and Initializing Superset
+  
 - apache-superset
   ```
   pip install apache-superset
