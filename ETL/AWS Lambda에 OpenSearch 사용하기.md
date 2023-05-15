@@ -31,7 +31,10 @@
 - AWS Lambda 실행 예제<br>
 https://aws.amazon.com/ko/getting-started/hands-on/run-serverless-code/
 
-- Opensearch cluster 구축 해보기
+- Opensearch Cluster 구축
+  - 권한 수정
+  - IAM 설정
+  - 마스터 사용자 설정
   
 - AWS Lambda에서 Opensearch API를 사용하는 예제
   ```
