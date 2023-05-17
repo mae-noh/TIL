@@ -153,6 +153,19 @@ python3 venv는 Python 프로젝트마다 독립된 가상환경을 생성하고
 pyenv는 시스템 전체에서 Python 버전을 관리하고 프로젝트별로 다른 Python 버전을 사용할 수 있음.
 ```
 
+# Installing Superset on EC2
+ 
+- sudo yum update -y
+- sudo yum install python3 -y
+- vi /.~bashrc
+  - export PATH=/usr/local/bin:$PATH
+  - alias python=python3
+- source /.~bashrc
+- sudo yum install gcc gcc-c++ python3-devel cyrus-sasl-devel
+- pip3 install cchardet==1.0.0
+- sudo pip3 install apache-superset
+- 
+
 ### 참고
 - https://randalee.github.io/python/superset-test-01/
 - [공식] https://superset.apache.org/docs/installation/installing-superset-from-scratch#os-dependencies
