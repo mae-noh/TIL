@@ -9,5 +9,5 @@
 - sql 코드에 v2 버전이 있길래 뭔가했는데 주륵ㅠ,,
 - sql engine v2는 기본적으로 비활성화되어있고
 - DB 연결시 파라미터에 추가시  `/?v2=true`를 추가해줘야함
-- 공식 문서를 차근차근 놓치지 말고 읽자 :)
+- github README를 차근차근 놓치지 말고 읽자 :)
 - 참고 : https://github.com/opendistro-for-elasticsearch/sql/blob/develop/docs/dev/NewSQLEngine.md
