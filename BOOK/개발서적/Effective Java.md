@@ -59,18 +59,18 @@ Q. 어떤 경우에 인스턴스화를 막는게 필요할까?
 
 ### item 5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라
 - 의존 객체 주입
-```
-public class SpellChecker {
-  private final Lexicon dictionary;
-  
-  public SpellChecker(Lexicon dictionary) {
-    this.dictionary = Objects.requireNonNull(dictionary);
+  ```
+  public class SpellChecker {
+    private final Lexicon dictionary;
+
+    public SpellChecker(Lexicon dictionary) {
+      this.dictionary = Objects.requireNonNull(dictionary);
+    }
+
+    public boolean isValid(String word) { ... }
+    public List<String> suggestions(String typo) { ... }
   }
-  
-  public boolean isValid(String word) { ... }
-  public List<String> suggestions(String typo) { ... }
-}
-```
+  ```
 
 - Supplier<T> 인터페이스
 - 클래스가 내부적으로 하나 이상의 자원에 의존한다면, 싱글턴, 정적 유틸리티 클래스는 지양
