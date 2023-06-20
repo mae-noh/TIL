@@ -1,4 +1,4 @@
-# Effective Java
+# Effective Java - [2장. 객체 생성과 파괴]
 
 ### item 1. `생성자` 대신 `정적 팩터리 메서드`(static factory method)를 고려하라
 - 클래스의 인스턴스를 얻는 전통적인 수단은 `public`
