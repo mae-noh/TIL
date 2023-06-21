@@ -110,7 +110,7 @@ Q. 왜 박싱된 타입이 아닌, 기본타입을 권장하는걸까?
 
 ### item 8. finalize와 cleaner 사용을 피하라.
 - finalize와 cleaner로는 제때 실행되어야 하는 작업은 절대 할 수 없다.
-- `AutoCloseable` 구현*
+- `AutoCloseable` 구현*  
 Q. AutoCloseable 그게 뭔데?
 
 ### item 9. try-finally 보다는 try-with-resources를 사용하라.
