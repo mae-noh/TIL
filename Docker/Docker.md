@@ -7,6 +7,7 @@ Docker 컨테이너는 각각의 컨테이너들이 독립적으로 존재 가�
 ## Docker와 Docker-compose가 무엇인가?
 - docker-compose를 이용하면 파일에 실행환경을 저장하여 간단하게 실행 가능.
 <img width="577" alt="Screen Shot 2023-06-26 at 9 57 19 PM" src="https://github.com/mae-noh/TIL/assets/65100355/96f5e3bf-42ea-43b1-93a4-17f0c7f3a62c">  
+  
 참고 [https://www.youtube.com/watch?v=EK6iYRCIjYs]
 
 ## 다양한 실행 방법, 무슨 차이인지 알고 쓰자.
