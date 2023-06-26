@@ -14,7 +14,13 @@
 ## Superset 버전 변경
 경로 > `docker/pythonpath_dev/superset_config.py`
 
-- 원하는 버전으로 변경시, 데이터 그대로 docker image만 변경되는듯
+- DB 업그레이드 `SECRET_KEY` 설정 필요  
+  참고 [https://superset.apache.org/docs/installation/configuring-superset/#adding-an-initial-secret_key]
+  1. `superset_config.py`에 `SECRET_KEY` 다음 암호화 값을 생성하여 `openssl rand -base64 42` 추가
+  2. docker superset 컨테이너 명령어를 실행하기 위해 `docker exec -it superset_app /bin/bash`
+  3. superset re-encrypt-secrets 실행시 적용 완료
+  
+- 원하는 버전으로 변경시, 데이터 그대로 docker image 변경
   ```
   x-superset-image: &superset-image apache/superset:${TAG:-latest-dev}
   x-superset-image: &superset-image apache/superset:2.0.0 # 변경
