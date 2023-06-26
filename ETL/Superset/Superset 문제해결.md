@@ -27,3 +27,15 @@
 ## TIME GRAIN
 > TIME GRAIN에 `Week` 없음..
 > config파일에 추가해주면 될것 같은데 안나옴..
+
+## Connection 연결시 비밀번호 인코딩 에러
+```
+SQLALCHEMY_DATABASE_URI = "%s://%s:%s@%s:%s/%s" % (
+  DATABASE_DIALECT,
+  DATABASE_USER,
+  DATABASE_PASSWORD,
+  DATABASE_HOST,
+  DATABASE_PORT,
+  DATABASE_DB,
+)
+```
