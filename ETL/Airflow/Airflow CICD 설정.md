@@ -66,3 +66,8 @@ GitHub Repository 내 DAG 코드를 Docker 컨테이너 내의 Airflow DAGs 폴�
       가져온 DAG 코드를 Airflow 컨테이너 내의 /opt/airflow/ 디렉토리로 동기화합니다.
       docker cp 명령어를 사용하여 호스트 머신의 dags/ 디렉토리에서 Airflow 컨테이너의 /opt/airflow/로 DAG 코드를 복사합니다.
 
+
+
+## QnA
+  - 서버가 다른 경우, docker에 어떻게 접근하는지?
+  - git push가 일어나면 jenkins 작동하는지?
