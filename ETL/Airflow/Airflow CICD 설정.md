@@ -1,8 +1,11 @@
 # Airflow CICD 설정
+GitHub Repository 내 DAG 코드를 Docker 컨테이너 내의 Airflow DAGs 폴더로 동기화
 
 ## 환경
 - local
 - airflow docker
+  
+<br>
 
 ## jenkins 설치
   ```
@@ -14,8 +17,10 @@
   /opt/homebrew/opt/jenkins/bin/jenkins --httpListenAddress=127.0.0.1 --httpPort=8888
   ```
 
-- 비밀번호 서버에서 확인
-- Install Suggested Plugins
+  - 비밀번호 서버에서 확인
+  - Install Suggested Plugins
+
+<br>
 
 ## jenkins pipeline 생성
 - jenkins web
