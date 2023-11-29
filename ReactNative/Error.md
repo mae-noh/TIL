@@ -10,4 +10,6 @@ https://reactnative.dev/docs/environment-setup?os=macos&platform=android&guide=n
 minSdkVersion = Integer.parseInt(findProperty('android.minSdkVersion') ?: '23'), 21에서 23으로 수정   
 
 ## kakao build failed
+- `* Where:
+Build file '/Users/maenoh/react-native/test/motiv/android/app/build.gradle' line: 121`
 - `Could not find method kotlinOptions() for arguments [build_cuhnpa8pz4l6b0mhsg04etgdl$_run_closure2$_closure9@19a3828a] on extension 'android' of type com.android.build.gradle.internal.dsl.BaseAppModuleExtension.`
